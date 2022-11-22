@@ -2,7 +2,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from hoteliaApp.models.service import Service
 from hoteliaApp.serializers.serializerService import SerializerService
-
+# esta es la parte  visual del componente la cual va a enviar las peticiones rest
 @api_view(['GET','POST'])
 def serviceAllView(request):
     if request.method =='GET':
