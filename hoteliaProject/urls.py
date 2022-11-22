@@ -36,4 +36,8 @@ urlpatterns = [
     path('reservation/<int:pk>',views.reservationUniqueView),
     path('reservation/user/<int:pk>',views.reservationUniqueUserView),
     path('reservation/hotel/<int:pk>',views.reservationUniqueHotelView),
+    path('roomreservartion/',views.roomReservationAllView),
+    path('roomreservation/<int:pk>',views.roomReservationUniqueView),
+    path('roomreservation/reservation/<int:pk>',views.roomReservationUniqueReservationView),
+    path('roomreservation/room/<int:pk>',views.roomReservationUniqueRoomView),
 ]

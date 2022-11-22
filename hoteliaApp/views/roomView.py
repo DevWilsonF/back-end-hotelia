@@ -11,11 +11,11 @@ def roomAllView(request):
         return Response (room_serializer.data)
     
     elif request.method =='POST':
-        per_serializer = SerializerRoom(data=request.data)
-        if  per_serializer.is_valid():
-            per_serializer.save()
-            return Response(per_serializer.data)
-        return Response(per_serializer.errors)
+        rom_serializer = SerializerRoom(data=request.data)
+        if  rom_serializer.is_valid():
+            rom_serializer.save()
+            return Response(rom_serializer.data)
+        return Response(rom_serializer.errors)
 
 @api_view(['GET','PUT','DELETE'])
 def roomUniqueUserView(request,pk=None):

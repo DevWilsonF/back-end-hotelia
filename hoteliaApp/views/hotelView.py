@@ -11,11 +11,11 @@ def hotelAllView(request):
         return Response (hotel_serializer.data)
     
     elif request.method =='POST':
-        per_serializer = SerializerHotel(data=request.data)
-        if  per_serializer.is_valid():
-            per_serializer.save()
-            return Response(per_serializer.data)
-        return Response(per_serializer.errors)
+        hot_serializer = SerializerHotel(data=request.data)
+        if  hot_serializer.is_valid():
+            hot_serializer.save()
+            return Response(hot_serializer.data)
+        return Response(hot_serializer.errors)
 
 @api_view(['GET','PUT','DELETE'])
 def hotelUniqueUserView(request,pk=None):

@@ -11,11 +11,11 @@ def reservationAllView(request):
         return Response (reservation_serializer.data)
     
     elif request.method =='POST':
-        per_serializer = SerializerReservation(data=request.data)
-        if  per_serializer.is_valid():
-            per_serializer.save()
-            return Response(per_serializer.data)
-        return Response(per_serializer.errors)
+        res_serializer = SerializerReservation(data=request.data)
+        if  res_serializer.is_valid():
+            res_serializer.save()
+            return Response(res_serializer.data)
+        return Response(res_serializer.errors)
 
 @api_view(['GET'])
 def reservationUniqueUserView(request,pk=None):

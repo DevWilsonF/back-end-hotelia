@@ -11,11 +11,11 @@ def serviceAllView(request):
         return Response (service_serializer.data)
     
     elif request.method =='POST':
-        per_serializer = SerializerService(data=request.data)
-        if  per_serializer.is_valid():
-            per_serializer.save()
-            return Response(per_serializer.data)
-        return Response(per_serializer.errors)
+        serv_serializer = SerializerService(data=request.data)
+        if  serv_serializer.is_valid():
+            serv_serializer.save()
+            return Response(serv_serializer.data)
+        return Response(serv_serializer.errors)
 
     
 @api_view(['GET','PUT','DELETE'])
